@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+canvas {
+  background: #2d3436;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  border: 3px solid #dfe6e9;
+}
+
+body {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.rule-list {
+  margin-top: 20px;
+  text-align: left;
+  list-style: inside;
+}
+
+.rule-list li {
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+  color: #dfe6e9;
+}
