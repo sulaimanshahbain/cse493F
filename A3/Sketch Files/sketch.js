@@ -10,7 +10,7 @@ let correctTallies = [];
 let gameDuration = 25000; // 25 seconds for the game
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640, 480);
   textAlign(CENTER, CENTER);
   textSize(24);
 }
@@ -27,7 +27,7 @@ function draw() {
 
 function displayIntroScreen() {
   background(74, 185, 255);
-  
+
   // Add a gradient background
   let c1 = color(74, 185, 255);
   let c2 = color(162, 155, 254);
@@ -37,21 +37,21 @@ function displayIntroScreen() {
     stroke(c);
     line(0, y, width, y);
   }
-  
+
   // Add a game logo
   textSize(48);
   textFont('Bangers');
   fill(255);
   text("Quick Maths!", width / 2, height / 4);
-  
+
   // Add a subtitle
   textSize(24);
   textFont('Montserrat');
   text("Test your simple math skills!", width / 2, height / 3);
-  
+
   // Draw game rules
   drawRules();
-  
+
   // Add "Press any button to start" text
   textSize(18);
   text("Press any button to start...", width / 2, height - 40);
@@ -59,13 +59,13 @@ function displayIntroScreen() {
 
 function displayQuizScreen() {
   background(255);
-  
+
   fill(0);
   text(`${currentProblem.question} = ?`, width / 2, height / 3);
   displayOptions();
   displayFeedback();
   displayTallies();
-  
+
   let timeLeft = (gameStartTime + gameDuration - millis()) / 1000;
   if (timeLeft <= 0) {
     gameState = 'end';
@@ -78,7 +78,7 @@ function displayQuizScreen() {
 
 function displayEndScreen() {
   background(74, 185, 255);
-  
+
   fill(255);
   text(`Final Score: ${score}`, width / 2, height / 2);
   text("Press any button to restart...", width / 2, 2 * height / 3);
@@ -139,7 +139,7 @@ function startGame() {
   setTimeout(() => {
     nextProblem();
     gameState = 'quiz';
-  }, 500); // Wait for .5 second before showing the first problem
+  }, 700); // Wait for .7 second before showing the first problem
 }
 
 function nextProblem() {
@@ -149,7 +149,7 @@ function nextProblem() {
   let num2 = int(random(1, 20));
   let operation = random(['+', '-', '*', '/']);
   let result = int(eval(`${num1} ${operation} ${num2}`)); // Ensure integer results
-  currentProblem = {question: `${num1} ${operation} ${num2}`, answer: result};
+  currentProblem = { question: `${num1} ${operation} ${num2}`, answer: result };
   generateOptions(result);
 }
 
