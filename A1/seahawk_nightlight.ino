@@ -1,3 +1,5 @@
+// Code in this file was generated using Claude AI
+
 // Pin Definitions
 const int redPin = 4;
 const int greenPin = 5;
